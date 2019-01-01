@@ -62,6 +62,7 @@
       var $chatlog = $('.js-chat-log');
       var $input = $('.js-text');
       var $sayButton = $('.js-say');
+      var previous_question = "";
 
       function createRow(text) {
         //var $row = $('<li class="list-group-item"></li>');
@@ -92,6 +93,12 @@
 
         $submit.done(function(statement) {
             createRow(statement.text);
+            if (statement.text == 'I am sorry, but I do not understand.') {
+                createRow($previous_question);
+            }
+            else {
+                $previous_question = statement.text;
+            }
 
             // Clear the input field
             $input.val('');

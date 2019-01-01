@@ -1,5 +1,6 @@
 import json
 
+import template as template
 from django.shortcuts import render
 from django.template import loader
 from django.views.generic.base import TemplateView
@@ -12,20 +13,54 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.ext.django_chatterbot import settings
 from .forms import OrderDetailsForm
 
-#from orderapp.forms import OrderDetailsForm
-#from  orderapp.models import OrderDetails
+from orderapp.forms import OrderDetailsForm
+from orderapp.models import OrderDetails
 
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
+
+RESPONSE_DICT = {
+        "type": "",
+        "choice": "",
+        "size": "",
+        "customize": [],
+        "quantity": "",
+    }
+
+
+
+def add_details_form(request):
+
+    name = request.POST["name"]
+    mobilenumber = request.POST["mobilenumber"]
+    address = request.POST["address"]
+
+    order_details = OrderDetails(
+        name=name,
+        mobile_no=mobilenumber,
+        address=address,
+        choice=RESPONSE_DICT['choice'],
+        type=RESPONSE_DICT['size'],
+        customize=RESPONSE_DICT['customize'],
+        quantity=int(RESPONSE_DICT['quantity'])
+    )
+
+    order_details.save()
+    return render(request, "app.html")
+
+
+def response_form(request):
+    return render(request, "login_page.html")
 
 
 class ChatterBotAppView(TemplateView):
     template_name = 'app.html'
 
 
-class ChatterBotAppView1(TemplateView):
-    template_name = 'login_page.html'
+#class ChatterBotAppView1(TemplateView):
+    #template_name = 'login_page.html'
+ #   template_name = 'login_page.html'
 
 # def ChatterBotAppView1(request):
 #     order_form = OrderDetailsForm()
@@ -36,30 +71,50 @@ class ChatterBotAppView1(TemplateView):
 # return  render(request=request)
 
 
-class FormNew(View):
+#class FormNew(TemplateView):
+  # template_name = 'login_page.html'
 
-    def response_form(self, request):
-        if request.method == 'POST':
-            orderDetailsForm = OrderDetailsForm(request.POST)
+# def response_form(self, request):
+#     template_name = 'login_page.html'
+#     form = OrderDetailsForm()
+#     if request.method == 'POST':
+#         orderDetailsForm =OrderDetailsForm(request.POST)
+#         if orderDetailsForm.is_valid():
+#             orderDetailsForm.save(commit=True)
+#             my_dict ={'order_form' : form}
+#             template = loader.get_template('login_page.html')
+#             return HttpResponse(template.render(my_dict, request))
+#
+#     return render(request=request, template_name='login_page.html')
 
-            if orderDetailsForm.is_valid():
-                name = orderDetailsForm.cleaned_data['name']
-                Mobile_no = orderDetailsForm.cleaned_data['Mobile_no']
-                Address = orderDetailsForm.cleaned_data['Address']
 
-                context = {
-                    'name': name,
-                    'Mobile_no': Mobile_no,
-                    'Address': Address
-                }
 
-                template = loader.get_template('login_page.html')
 
-                return HttpResponse(template.render(context, request))
 
-        form = OrderDetailsForm()
 
-        return render(request, 'login_page.html');
+# def response_form(self, request):
+#     template_name = 'login_page.html'
+#     form = OrderDetailsForm()
+#         if request.method == 'POST':
+#            if request.method == 'POST':
+#
+#             if orderDetailsForm.is_valid():
+#                 Name=orderDetailsForm.cleaned_data['name']
+#                 Mobile_no=orderDetailsForm.cleaned_data['Mobile_no']
+#                 Address = orderDetailsForm.cleaned_data['Address']
+#                 orderDetailsForm.save(commit=True)
+#
+#                 my_context = {'order_form': form}
+#
+#                 template = loader.get_template('login_page.html')
+#
+#                 return HttpResponse(template.render(my_context, request))
+#
+#
+#
+#         return render(request,template_name = 'login_page.html')
+class ResponseObject():
+    previous_question = ""
 
 
 class ChatterBotApiView(View):
@@ -71,6 +126,7 @@ class ChatterBotApiView(View):
     trainer = ChatterBotCorpusTrainer(chatterbot)
     trainer.train(DATA_DIR + '/test_data.json')
     trainer.export_for_training('./test_data.json')
+    respose_object = ResponseObject()
 
     def post(self, request, *args, **kwargs):
         """
@@ -93,6 +149,27 @@ class ChatterBotApiView(View):
 
         print(response_data)
 
+        previous_question = self.respose_object.previous_question
+
+        current_question = response_data['text']
+        answer = response_data['in_response_to']
+        if current_question == 'I am sorry, but I do not understand.':
+            current_question = previous_question
+        if previous_question == 'veg or non veg?':
+            RESPONSE_DICT['type'] = answer
+        elif previous_question == 'Which one You Pick?: Margherita / Farm House / Peppy Paneer / Double Cheese ' \
+                                       'Margherita' or previous_question == 'Which one You Pick? : Chicken ' \
+                                                                                 'Sausage/ Chicken Delight':
+            RESPONSE_DICT['choice'] = answer
+        elif previous_question == 'Pick a Size? Regular / Medium / Large':
+            RESPONSE_DICT['size'] = answer
+        elif previous_question == 'Select topping: Extra Cheese / Paneer / Crispy Capsicum / Onion':
+            RESPONSE_DICT['customize'].append(answer)
+        elif previous_question == 'Select Crust type: Wheat Crust/ Fresh Pan Crust / Thick Crust':
+            RESPONSE_DICT['customize'].append(answer)
+        elif previous_question == 'How Many Pizzas? 1 / 2 / 3':
+            RESPONSE_DICT['quantity'] = answer
+        self.respose_object.previous_question = current_question
 
         return JsonResponse(response_data, status=200)
 

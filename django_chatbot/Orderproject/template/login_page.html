@@ -6,17 +6,19 @@
 </head>
 <body>
 
-    <form class="form-signin" action="template/app.html" method="get" onsubmit="alert('you submitted the form');">
-      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputUsername" class="sr-only">Username</label>
-      <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-      <label for="inputMobileno" class="sr-only">Mobile no</label>
-      <input type="text" id="inputMobileno" class="form-control" placeholder="Mobile no" required>
-       <label for="inputAddress" class="sr-only">Address</label>
-      <input type="text" id="inputAddress" class="form-control" placeholder="Address" required>
 
-      <button type="submit">Sign in</button>
+    <form class="form-signin" method="post" action="add_details_form/" >
+         {{ form.as_p}}
+        {% csrf_token %}
+      <h1 class="h3 mb-3 font-weight-normal">Please enter your details</h1>
+      <label for="inputUsername" class="sr-only">Username</label>
+      <input type="text" name="name" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+      <label for="inputMobileno" class="sr-only">Mobile no</label>
+      <input type="number" name="mobilenumber" id="inputMobileno" class="form-control" placeholder="Mobile no" required>
+       <label for="inputAddress" class="sr-only">Address</label>
+      <input type="text" name="address" id="inputAddress" class="form-control" placeholder="Address" required>
+
+      <button type="submit">Submit</button>
 
 
     </form>

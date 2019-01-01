@@ -1,10 +1,13 @@
 from django.db import models
+
+
 class OrderDetails(models.Model):
-    #Choice = models.CharField(max_length=50)
-    #Type = models.CharField(max_length=50)
-    #Customize = models.CharField(max_length=50)
-    Name = models.CharField(max_length=50)
-   # Quantity = models.IntegerField()
-    Mobile_no = models.IntegerField()
-    Address = models.CharField(max_length=50)
+    choice = models.CharField(max_length=50)
+    type = models.CharField(max_length=50)
+    customize = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+    quantity = models.IntegerField()
+    mobile_no = models.IntegerField()
+    address = models.CharField(max_length=50)
 # Create your models here.
+

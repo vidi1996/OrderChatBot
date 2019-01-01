@@ -22,5 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('chatterbot/', views.ChatterBotApiView.as_view(), name='chatterbot'),
     path('order/', views.ChatterBotAppView.as_view(), name='main'),
-    path('order/login/', views.FormNew.as_view(), name='form_new'),
+    path('order/login/', views.response_form, name='response_form'),
+    path('order/login/add_details_form/', views.add_details_form, name='add_details_form'),
+    path('', views.ChatterBotAppView.as_view(), name='main'),
 ]

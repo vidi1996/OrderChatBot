@@ -5,84 +5,92 @@
       "Hi,How can I help you?"
     ],
     [
-      "I want to order Pizza?",
+      "I want to order Pizza",
       "veg or non veg?"
     ],
     [
       "veg",
-      "Which one You Pick?: Margherita / farm house / peppy paneer / Double cheese Margherita"
+      "Which one You Pick?: Margherita / Farm House / Peppy Paneer / Double Cheese Margherita"
     ],
     [
       "non veg",
-      "Which one You Pick? : Chicken Sausage/ chicken delight "
+      "Which one You Pick? : Chicken Sausage / Chicken Delight"
+    ],
+    [
+      " Chicken Sausage",
+      "Pick a Size? Regular / Medium / Large"
+    ],
+     [
+      " Chicken Delight",
+      "Pick a Size? Regular / Medium / Large"
     ],
     [
       "Margherita",
-      "How large?"
+      "Pick a Size? Regular / Medium / Large"
     ],
     [
-      "Farm house",
-      "How large?"
+      "Farm House",
+      "Pick a Size? Regular / Medium / Large"
     ],
     [
-      "peppy paneer",
-      "How large?"
+      "Peppy Paneer",
+      "Pick a Size? Regular / Medium / Large"
     ],
     [
-      "Double cheese paneer",
-      "How large?"
+      "Double Cheese Paneer",
+      "Pick a Size? Regular / Medium / Large"
     ],
     [
       "Regular",
-      "Do You want to customize your pizza?"
+      "Do You want to customize your pizza? Yes / No"
     ],
     [
       "Medium",
-      "Do You want to customize your pizza?"
+      "Do You want to customize your pizza? Yes / No"
     ],
     [
       "Large",
-      "Do You want to customize your pizza?"
+      "Do You want to customize your pizza? Yes / No"
     ],
     [
       "Yes",
-      "What you want to Customize?: Toppings / Crust type "
+      "What do you want to Customize? Toppings / Crust type"
     ],
     [
       "Toppings",
-      "Select toppings from below: add extra cheese/ paneer / crispy capsicum / onion"
+      "Select topping: Extra Cheese / Paneer / Crispy Capsicum / Onion"
     ],
     [
       "Crust type",
-      "Select Crust type from below: wheat crust/ fresh pan crust / thick crust"
+      "Select Crust type: Wheat Crust/ Fresh Pan Crust / Thick Crust"
     ],
     [
-      "add extra cheese",
-      "Do  you want to add anything else?"
+      "Extra Cheese",
+      "Do you want to add anything else? Yes/ No"
     ],
     [
-      "paneer",
-      "Do  you want to add anything else?"
+      "Paneer",
+      "Do you want to add anything else? Yes/ No"
     ],
     [
-      "crispy capsicum",
-      "Do  you want to add anything else?"
+      "Crispy Capsicum",
+      "Do you want to add anything else? Yes/ No"
     ],
     [
-      "onion",
-      "Do  you want to add anything else?"
+      "Onion",
+      "Do you want to add anything else? Yes/ No"
     ],
     [
-      "wheat crust",
-      "Do  you want to add anything else?"
+      "Wheat Crust",
+      "Do you want to add anything else? Yes/ No"
     ],
     [
-      "fresh pan crust",
-      "Do  you want to add anything else?"
+      "Fresh Pan Crust",
+      "Do you want to add anything else? Yes/ No"
     ],
     [
-      "thick crust",
-      "Do  you want to add anything else?"
+      "Thick Crust",
+      "Do you want to add anything else? Yes/ No"
     ],
     [
       "Yes",
@@ -90,7 +98,7 @@
     ],
     [
       "No",
-      "How Many ?"
+      "How Many Pizzas? 1 / 2 / 3"
     ],
     [
       "1",
@@ -102,11 +110,11 @@
     ],
     [
       "2",
-      "ok,Please provide Your delivery address?"
+      "ok,Please enter 'confirm' to proceed "
     ],
     [
       "3",
-      "ok,Please provide Your delivery address?"
+      "ok,Please enter 'confirm' to proceed "
     ]
   ]
 }
