@@ -23,6 +23,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -38,9 +39,17 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="465" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1580927257112">
+    <state x="526" y="216" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581163938721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1580927257112" />
+    <state x="526" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1581163938721" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1581016189476">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581016189476" />
+    <state x="465" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1581137429419">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581137429419" />
   </component>
 </project>

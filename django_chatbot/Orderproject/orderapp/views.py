@@ -1,11 +1,17 @@
-from chatterbot import ChatBot
-from django.http import JsonResponse
-from django.shortcuts import render
-from chatterbot.ext.django_chatterbot import settings
-from django.views.generic import View
 import json
+from django.views.generic.base import TemplateView
+from django.views.generic import View
+from django.http import JsonResponse
+from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
 
-# Create your views here.
+from chatterbot.ext.django_chatterbot import settings
+
+
+class ChatterBotAppView(TemplateView):
+    template_name = 'app.html'
+
+
 class ChatterBotApiView(View):
     """
     Provide an API endpoint to interact with ChatterBot.

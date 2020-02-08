@@ -1,8 +1,8 @@
 <!doctype html>
-{% load staticfiles %}
+{% load static %}
 <html>
   <head>
-    <title>Django ChatterBot Example</title>
+    <title>Welcome To DOMINOS</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
   </head>
@@ -13,7 +13,7 @@
     <div class="container">
 
       <div class="jumbotron mt-1">
-        <h1 class="jumbotron-heading text-xs-center">Django ChatterBot Example</h1>
+        <h1 class="jumbotron-heading text-xs-center">Welcome to Pizza World!!!</h1>
         <p class="lead text-xs-center">
           This is a web app that allows you to talk to ChatterBot.
         </p>
@@ -42,7 +42,7 @@
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/js.cookie.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
-    <script>
+   <script>
       var chatterbotUrl = '{% url "chatterbot" %}';
       var csrftoken = Cookies.get('csrftoken');
 
