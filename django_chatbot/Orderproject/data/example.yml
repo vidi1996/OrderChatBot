@@ -1,0 +1,19 @@
+categories:
+- conversations
+conversations:
+- - Hi
+  - Hi,How can I help you?
+- - I want to order Pizza?
+  - veg or non veg?
+- - veg
+  - Which one You Pick?
+- - non veg
+  - Which one You Pick?
+- - Margherita
+  - How large?
+- - Double Cheese Margherita
+  - How large?
+- - Regular
+  - ok, your order is placed
+
+

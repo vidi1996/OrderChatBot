@@ -4,8 +4,13 @@ from django.views.generic import View
 from django.http import JsonResponse
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
+from chatterbot.trainers import ChatterBotCorpusTrainer
 
 from chatterbot.ext.django_chatterbot import settings
+
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, 'data')
 
 
 class ChatterBotAppView(TemplateView):
@@ -17,7 +22,10 @@ class ChatterBotApiView(View):
     Provide an API endpoint to interact with ChatterBot.
     """
 
-    chatterbot = ChatBot(**settings.CHATTERBOT)
+    chatterbot = ChatBot(**settings.CHATTERBOT, read_only=True)
+    trainer = ChatterBotCorpusTrainer(chatterbot)
+    trainer.train(DATA_DIR + '/test_data.json')
+    trainer.export_for_training('./test_data.json')
 
     def post(self, request, *args, **kwargs):
         """

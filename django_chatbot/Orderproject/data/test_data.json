@@ -1,0 +1,88 @@
+{
+  "conversations": [
+    [
+      "Hi",
+      "Hi,How can I help you?"
+    ],
+    [
+      "I want to order Pizza?",
+      "veg or non veg?"
+    ],
+    [
+      "veg",
+      "Which one You Pick?"
+    ],
+    [
+      "non veg",
+      "Which one You Pick?"
+    ],
+    [
+      "Margherita",
+      "How large?"
+    ],
+    [
+      "",
+      "How large?"
+    ],
+     [
+      "Farm house",
+      "How large?"
+    ],
+    [
+      "Peppy paneer",
+      "How large?"
+    ],
+    [
+      "Regular",
+      "Do You want to customize your pizza?"
+    ],
+    [
+      "Yes",
+      "What you want to Customize?"
+    ],
+    [
+      "Toppings",
+      "Add extra cheese"
+    ],
+    [
+      "Medium",
+      "Do You want to customize your pizza?"
+    ],
+    [
+      "Yes",
+      "What you want to Customize?"
+    ],
+    [
+      "Large",
+      "Do You want to customize your pizza?"
+    ],
+     [
+      "Yes",
+      "What you want to Customize?"
+    ],
+    [
+      "No",
+      "How Many ?"
+    ],
+    [
+      "1",
+      "ok,Please provide Your delivery address?"
+    ],
+    [
+      " 2",
+      "ok,Please provide Your delivery address?"
+    ],
+    [
+      " 3",
+      "ok,Please provide Your delivery address?"
+    ],
+
+    [
+      "Mediun",
+      "ok, your order is placed"
+    ],
+    [
+
+    ]
+  ]
+}

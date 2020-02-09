@@ -1,0 +1,37 @@
+categories:
+- veg
+conversations:
+- - Hi
+  - Hi,How can I help you?
+- - I want to order Pizza?
+  - veg or non veg?
+- - veg
+  - Which one You Pick?
+- - Margherita
+- - Double Cheese Margherita
+- - Farm House
+- - Peppy Paneer
+  - How large?
+- - Regular
+- - Medium
+- - Large
+  - Do You want to customize the Pizza?
+- - Yes
+- - No
+  - Cool,which one You want to change?
+- - Crust type
+- - Toppings
+- - Add Extra cheese
+  - Select Crust type ?
+- - classic Hand tossed
+- - Wheat Thin Crust
+- - Fresh Pan Pizza
+  - Select Toppings?
+- - Black olive
+- - onion
+- - Paneer
+  - How many?
+- - 1
+- - 2
+- - 3
+- - 4

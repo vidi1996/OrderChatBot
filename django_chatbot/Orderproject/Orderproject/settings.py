@@ -18,6 +18,7 @@ from django.conf.global_settings import STATICFILES_DIRS
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'template')
+DATA_DIR = os.path.join(BASE_DIR, 'data')
 
 
 # Quick-start development settings - unsuitable for production
@@ -76,13 +77,21 @@ TEMPLATES = [
 
 CHATTERBOT = {
     'name': 'Dominos',
+    'storage_adapter': 'chatterbot.storage.SQLStorageAdapter',
     'logic_adapters': [
-        "chatterbot.logic.BestMatch"
+        {
+            'import_path': "chatterbot.logic.BestMatch",
+            'default_response': 'I am sorry, but I do not understand.',
+            'maximum_similarity_threshold': 0.80
+        }
     ],
-    'trainer': 'chatterbot.trainers.ChatterBotCorpusTrainer',
-    'training_data': [
-        'chatterbot.corpus'
-    ]
+    # 'trainer': 'chatterbot.trainers.ChatterBotCorpusTrainer',
+    # 'training_data': [
+    #     "chatterbot.corpus.english.greetings",
+    #     "chatterbot.corpus.english.conversations",
+    #     "chatterbot.corpus.english.food"
+    #
+    # ]
 }
 WSGI_APPLICATION = 'Orderproject.wsgi.application'
 
