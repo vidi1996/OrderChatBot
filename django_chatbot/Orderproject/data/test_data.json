@@ -10,26 +10,26 @@
     ],
     [
       "veg",
-      "Which one You Pick?"
+      "Which one You Pick?: Margherita / farm house / peppy paneer / Double cheese Margherita"
     ],
     [
       "non veg",
-      "Which one You Pick?"
+      "Which one You Pick? : Chicken Sausage/ chicken delight "
     ],
     [
       "Margherita",
       "How large?"
     ],
     [
-      "",
-      "How large?"
-    ],
-     [
       "Farm house",
       "How large?"
     ],
     [
-      "Peppy paneer",
+      "peppy paneer",
+      "How large?"
+    ],
+    [
+      "Double cheese paneer",
       "How large?"
     ],
     [
@@ -37,28 +37,56 @@
       "Do You want to customize your pizza?"
     ],
     [
-      "Yes",
-      "What you want to Customize?"
-    ],
-    [
-      "Toppings",
-      "Add extra cheese"
-    ],
-    [
       "Medium",
       "Do You want to customize your pizza?"
-    ],
-    [
-      "Yes",
-      "What you want to Customize?"
     ],
     [
       "Large",
       "Do You want to customize your pizza?"
     ],
-     [
+    [
       "Yes",
-      "What you want to Customize?"
+      "What you want to Customize?: Toppings / Crust type "
+    ],
+    [
+      "Toppings",
+      "Select toppings from below: add extra cheese/ paneer / crispy capsicum / onion"
+    ],
+    [
+      "Crust type",
+      "Select Crust type from below: wheat crust/ fresh pan crust / thick crust"
+    ],
+    [
+      "add extra cheese",
+      "Do  you want to add anything else?"
+    ],
+    [
+      "paneer",
+      "Do  you want to add anything else?"
+    ],
+    [
+      "crispy capsicum",
+      "Do  you want to add anything else?"
+    ],
+    [
+      "onion",
+      "Do  you want to add anything else?"
+    ],
+    [
+      "wheat crust",
+      "Do  you want to add anything else?"
+    ],
+    [
+      "fresh pan crust",
+      "Do  you want to add anything else?"
+    ],
+    [
+      "thick crust",
+      "Do  you want to add anything else?"
+    ],
+    [
+      "Yes",
+      "What you want to Customize?: Toppings / Crust type "
     ],
     [
       "No",
@@ -66,23 +94,32 @@
     ],
     [
       "1",
+      "ok,Please enter 'confirm' to proceed "
+    ],
+    [
+      "confirm",
+      "Thank you"
+    ],
+    [
+      "2",
       "ok,Please provide Your delivery address?"
     ],
     [
-      " 2",
+      "3",
       "ok,Please provide Your delivery address?"
-    ],
-    [
-      " 3",
-      "ok,Please provide Your delivery address?"
-    ],
-
-    [
-      "Mediun",
-      "ok, your order is placed"
-    ],
-    [
-
     ]
   ]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

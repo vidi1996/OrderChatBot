@@ -64,10 +64,15 @@
       var $sayButton = $('.js-say');
 
       function createRow(text) {
-        var $row = $('<li class="list-group-item"></li>');
+        //var $row = $('<li class="list-group-item"></li>');
+         var $row = $('<li class="list-group-item"></li>');
 
         $row.text(text);
         $chatlog.append($row);
+        if(text=='confirm')
+        {
+        $chatlog.append("<a href='login/'>Click here</a>");
+        }
       }
 
       function submitInput() {

@@ -19,7 +19,8 @@ from orderapp import views
 from django.urls import path
 
 urlpatterns = [
-    path('order/', views.ChatterBotAppView.as_view(),name='main'),
     path('admin/', admin.site.urls, name='admin'),
-    path('chatterbot/', views.ChatterBotApiView.as_view(),name='chatterbot'),
+    path('chatterbot/', views.ChatterBotApiView.as_view(), name='chatterbot'),
+    path('order/', views.ChatterBotAppView.as_view(), name='main'),
+    path('order/login/', views.FormNew.as_view(), name='form_new'),
 ]
