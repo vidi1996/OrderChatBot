@@ -8,7 +8,12 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
 """
 
 import os
+import sys
 
+# add your project directory to the sys.path
+project_home = u'/home/vidithavp/Orderproject'
+if project_home not in sys.path:
+    sys.path.insert(0, project_home)
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Orderproject.settings')

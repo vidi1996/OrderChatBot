@@ -43,7 +43,7 @@ def add_details_form(request):
         choice=RESPONSE_DICT['choice'],
         type=RESPONSE_DICT['size'],
         customize=RESPONSE_DICT['customize'],
-        quantity=int(RESPONSE_DICT['quantity'])
+        quantity=RESPONSE_DICT['quantity']
     )
 
     order_details.save()
